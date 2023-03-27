@@ -1,3 +1,5 @@
+#include <limits.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -7,6 +9,8 @@
  */
 int main(void)
 {
-    _printf("%b\n", 98);
-    return (0);
+  int n = _printf("%cello, world!", 'H');
+  printf("\nn = %d \n", n);
+
+  return (0);
 }
