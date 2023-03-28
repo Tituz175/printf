@@ -19,27 +19,27 @@
 
 /**
  * struct functions - identifiers for my printf function
- * @char: input function symbol
+ * @functionSymbol: input function symbol
  * @function: function for input symbol
  */
 
 typedef struct functions
 {
-    char fuctionSymbol;
-    int (*function)(va_list type, char buffer[], int flags, int width, int precision, int size);
+	char functionSymbol;
+	int (*function)(va_list type, char buffer[],
+		int flags, int width, int precision, int size);
 } function;
 
 int _printf(const char *format, ...);
 void print_buffer(char buffer[], int *buff_ind);
 int print_char(va_list types, char buffer[],
-               int flags, int width, int precision, int size);
-
+		int flags, int width, int precision, int size);
 
 int handle_write_char(char c, char buffer[],
-                      int flags, int width, int precision, int size);
+		int flags, int width, int precision, int size);
 
-                      
-int handle_print(const char *format, int *symbol, va_list args, char buffer[], int flags, int width, int precision, int size);
+int handle_print(const char *format, int *symbol, va_list args,
+		char buffer[], int flags, int width, int precision, int size);
 
 int get_flags(const char *format, int *index);
 int get_width(const char *format, int *index, va_list args);
