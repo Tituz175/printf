@@ -34,6 +34,10 @@ int _printf(const char *format, ...);
 void print_buffer(char buffer[], int *buff_ind);
 int print_char(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
+int print_string(va_list types, char buffer[],
+		int flags, int width, int precision, int size);
+int print_percent(va_list types, char buffer[],
+		int flags, int width, int precision, int size);
 
 int handle_write_char(char c, char buffer[],
 		int flags, int width, int precision, int size);
@@ -76,6 +80,10 @@ int print_reverse(va_list types, char buffer[],
 /*Function to print a string in rot 13*/
 int print_rot13string(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
+int print_pointer(va_list types, char buffer[],
+		int flags, int width, int precision, int size);
+int print_non_printable(va_list types, char buffer[],
+        int flags, int width, int precision, int size);
 
 /* width handler */
 int write_number(int is_positive, int ind, char buffer[],
